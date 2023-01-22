@@ -13,11 +13,8 @@ startSound.src = './assets/sfx/start.wav';
 const correctSound = new Audio();
 correctSound.src = './assets/sfx/correct.wav';
 const wrongSound = new Audio();
-wrongSound.src = './assets/sfx/wrong.wav';
-const quizOver = new Audio();
-quizOver.src = './assets/sfx/quiz-over.mp3';
-const quizOverTimer = new Audio();
-quizOverTimer.src = './assets/sfx/quiz-over-timer.mp3';
+wrongSound.src = './assets/sfx/incorrect.wav';
+
 
 // get elements
 const startScreen = document.getElementById('start-screen');
@@ -100,13 +97,13 @@ function processAnswer(e) {
         endQuiz();
       }, 500);
       if (time > 0 && soundToggle.checked) {
-        quizOver.play();
       }
     } else {
       questionIndex++;
       questionShow();
     }
   }, 1000);
+  
 }
 
 // timer
@@ -118,7 +115,6 @@ function startTimer() {
     if (time <= 0) {
       endQuiz();
       if (soundToggle.checked) {
-        quizOverTimer.play();
       }
       setTimeout(() => {
         let title = document.querySelector('#end-screen p');
@@ -166,3 +162,4 @@ soundToggle.addEventListener('change', () => {
     soundToggle.classList.replace('off', 'on');
   }
 });
+
