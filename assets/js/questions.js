@@ -1,159 +1,79 @@
 export function questions() {
-  // quiz
-  // let questionsList = [
-  //   {
-  //     title: 'fdvdfvs?',
-  //     answers: ['dfbetn', 'efvfv', 'afv', 'sfbdfb'],
-  //     correct: 3,
-  //   },
-  //   {
-  //     title: 'adfvsfvssg?',
-  //     answers: ['jmjhgnbsf', 'afvsrgb', 'sgdbghn', 'dgbsfd'],
-  //     correct: 2,
-  //   },
-  // ];
 
+  // questions and answers from https://www.interviewbit.com/javascript-mcq/
+  
   let questionsList = [
     {
       title:
-        'What is the output of the following code? var x = 10; var y = 20; console.log(x + y);',
-      answers: ['10', '20', '30', 'undefined'],
-      correct: 2,
-    },
-    {
-      title: 'What is the difference between let and var in JavaScript?',
-      answers: [
-        'let is block-scoped and var is function-scoped',
-        'let is function-scoped and var is block-scoped',
-        'let and var are the same',
-        'let is not used in JavaScript',
-      ],
+        'Javascript is an _______ language?',
+      answers: ['Object-Oriented', 'Object-Based', 'Procedural', 'None of the above'],
       correct: 0,
     },
+
     {
       title:
-        'What is the output of the following code? console.log(typeof(null))',
-      answers: ['null', '"null"', '"object"', 'undefined'],
+        'Which of the following keywords is used to define a variable in Javascript??',
+      answers: ['var', 'let', 'Both A and B', 'None of the above'],
       correct: 2,
     },
+
     {
       title:
-        'What is the output of the following code? var x = "5"; var y = 5; console.log(x == y);',
-      answers: ['true', 'false', 'undefined', 'null'],
-      correct: 0,
-    },
-    {
-      title: 'What is closure in JavaScript?',
-      answers: [
-        'A function that can access variables in its parent scope even after the parent function has returned',
-        'A function that can only be invoked once',
-        'A function that returns another function',
-        'A function that can only be invoked with a certain number of arguments',
-      ],
-      correct: 0,
-    },
-    {
-      title:
-        'What is the output of the following code? console.log(typeof(NaN))',
-      answers: ['NaN', '"NaN"', '"number"', 'undefined'],
+        'Which of the following methods is used to access HTML elements using Javascript?',
+      answers: ['getElementById()', 'getElementsByClassName()', 'Both A and B', 'none of the above'],
       correct: 2,
     },
+
     {
       title:
-        'What is the output of the following code? console.log(0.1 + 0.2 == 0.3)',
-      answers: ['true', 'false', 'undefined', 'null'],
-      correct: 1,
-    },
-    {
-      title:
-        'Which of the following is not a valid way to create an array in JavaScript?',
-      answers: [
-        'var arr = new Array();',
-        'var arr = [];',
-        'var arr = Array();',
-        'var arr = list();',
-      ],
+        'Which of the following methods can be used to display data in some form using Javascript?',
+      answers: ['document.write()', 'console.log()', 'window.alert()', 'All of the above'],
       correct: 3,
     },
-    {
-      title:
-        'What is the output of the following code? var x = "5"; var y = 5; console.log(x === y);',
-      answers: ['true', 'false', 'undefined', 'null'],
-      correct: 1,
-    },
-    {
-      title: 'What is the difference between == and === in JavaScript?',
-      answers: [
-        '== compares values, === compares values and types',
-        '== compares types, === compares values',
-        '== and === are the same',
-        '== compares only numbers, === compares only strings',
-      ],
-      correct: 0,
-    },
-    {
-      title:
-        'What is the output of the following code? console.log(parseInt("3.14"))',
-      answers: ['3', '3.14', 'undefined', 'NaN'],
-      correct: 0,
-    },
-    {
-      title:
-        'What is the output of the following code? console.log(parseFloat("3.14"))',
-      answers: ['3', '3.14', 'undefined', 'NaN'],
-      correct: 1,
-    },
-    {
-      title:
-        'What is the output of the following code? console.log(true + true)',
-      answers: ['2', 'true', 'false', 'undefined'],
-      correct: 0,
-    },
-    {
-      title:
-        'What is the output of the following code? console.log(true + false)',
-      answers: ['1', 'true', 'false', 'undefined'],
-      correct: 0,
-    },
-    {
-      title: 'What is the output of the following code? console.log(!false)',
-      answers: ['false', 'true', 'undefined', 'null'],
-      correct: 1,
-    },
-    {
-      title: 'What is the output of the following code? console.log(!!false)',
-      answers: ['false', 'true', 'undefined', 'null'],
-      correct: 0,
-    },
-    {
-      title: 'What is hoisting in JavaScript?',
-      answers: [
-        'The process of moving variable and function declarations to the top of the scope',
-        'The process of moving variable and function expressions to the top of the scope',
-        'The process of moving all code to the top of the scope',
-        'The process of moving all comments to the top of the scope',
-      ],
-      correct: 0,
-    },
-    {
-      title:
-        'What is the output of the following code? console.log(null == undefined)',
-      answers: ['true', 'false', 'undefined', 'null'],
-      correct: 0,
-    },
-  ];
 
-  // Shuffle the array using the Fisher-Yates shuffle algorithm
-  for (let i = questionsList.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
-    [questionsList[i], questionsList[j]] = [questionsList[j], questionsList[i]];
-  }
-  // Randomize the answers array for each question
-  questionsList.forEach((question) => {
-    let correctAnswer = question.answers[question.correct];
-    question.answers.sort(() => Math.random() - 0.5);
-    question.correct = question.answers.indexOf(correctAnswer);
-  });
+    {
+      title:
+        'How can a datatype be declared to be a constant type?',
+      answers: ['const', 'var', 'let', 'constant'],
+      correct: 0,
+    },
+
+    {
+      title:
+        'What keyword is used to check whether a given property is valid or not?',
+      answers: ['in', 'is in', 'exists', 'lies'],
+      correct: 0,
+    },
+
+    {
+      title:
+        'What is the use of the <noscript> tag in Javascript?',
+      answers: ['The contents are displayed by non-JS-based browsers', 'Clears all the cookies and cache', 'Both A and B', 'None of the above'],
+      correct: 0,
+    },
+
+    {
+      title:
+        'When an operator’s value is NULL, the typeof returned by the unary operator is:',
+      answers: ['Boolean', 'Undefined', 'Object', 'Integer'],
+      correct: 2,
+    },
+
+    {
+      title:
+        'Which of the following is not a Javascript framework?',
+      answers: ['Node', 'Vue', 'React', 'Cassandra'],
+      correct: 3,
+    },
+
+    {
+      title:
+        'How do we write a comment in javascript?',
+      answers: ['/* */', '//', '#', '$$'],
+      correct: 1,
+    },
+
+  ];
 
   questionsList = questionsList.slice(0, 10);
   return questionsList;
