@@ -83,7 +83,7 @@ li:nth-child(odd) {
   font-size: 120%;
   margin-top: 20px;
   padding-top: 10px;
-  color: gray;
+  color: rgb(2, 2, 2);
   border-top: 2px solid #ccc;
 }
 
@@ -93,7 +93,7 @@ li:nth-child(odd) {
   right: 10px;
 }
 
-/* speaker */
+/* speaker from https://codepen.io/atesgoral/pen/RLPGaZ */
 
 .speaker {
   vertical-align: middle;

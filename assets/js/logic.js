@@ -1,7 +1,11 @@
 import { questions } from './questions.js';
 import { scores } from './scores.js';
 
-
+// questions variables
+let score = 0;
+let questionIndex = 0;
+let questionsList = questions();
+let answerButtons;
 
 // sounds
 const startSound = new Audio();
@@ -23,7 +27,6 @@ const questionTitle = document.getElementById('question-title');
 const choices = document.getElementById('choices');
 const endScreen = document.getElementById('end-screen');
 const finalScore = document.getElementById('final-score');
-const inputGroup = endScreen.querySelectorAll('.reveal');
 const feedback = document.getElementById('feedback');
 const soundToggle = document.getElementById('sound');
 
@@ -33,13 +36,7 @@ const timer = document.querySelector('.timer');
 let time;
 let countdownTimer;
 
-// question variables
-let score = 0;
-let questionIndex = 0;
-let questionsList = questions();
-let answerButtons;
-
-// display question with options (from shuffled array of object)
+// display questions with choices of answer
 function questionShow() {
   questionTitle.classList.remove('show');
   let question = questionsList[questionIndex];
@@ -52,11 +49,10 @@ function questionShow() {
       (answer, index) =>
         `<button type="button" value="${answer}" id="answer-${index}" data-index=${
           index + 1
-        } class="quiz-option reveal">${answer}</button>`
+        } class="quiz-option">${answer}</button>`
     )
     .join('');
-  // eventHadler for choice buttons
-  // doesn't like to be outside of the questionShow()
+
   answerButtons = choices.querySelectorAll('button');
   answerButtons.forEach((answerButton) => {
     setTimeout(() => {
@@ -140,18 +136,16 @@ startBtn.addEventListener('click', startQuiz);
 
 // start quiz
 function startQuiz() {
-  // set timeout to initiate timer at the same time
   setTimeout(() => {
-    // remove startScreen add questions
     startScreen.classList.add('hide');
     questionsDiv.classList.remove('hide');
     questionShow();
-    time = 100;
+    time = 90;
   }, 1000);
   startTimer();
 }
 
-// end quiz
+// quiz end
 function endQuiz() {
   clearInterval(countdownTimer);
   timer.classList.remove('show');
