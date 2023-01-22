@@ -18,9 +18,9 @@ To help you become familiar with these tests and give you a chance to apply the 
 
 ### Link to work
 
-https://tomking1983.github.io/Console-Finances/
+https://tomking1983.github.io/module-6-code-quiz
 
 ### Screenshot of website
 
-![console screenshot](./assets/images/console-finances.png)
+![quiz screenshot](/assets/images/screenshot.png)
 
